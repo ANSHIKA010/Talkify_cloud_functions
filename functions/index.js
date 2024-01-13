@@ -67,6 +67,7 @@ exports.onConversationUpdated = functions
                 .collection("Conversations").doc(u).update({
                   "lastMessage": lastMessage.message,
                   "timestamp": lastMessage.timestamp,
+                  "type": lastMessage.type,
                   "unseenCount": admin.firestore.FieldValue.increment(1),
                 });
           });
